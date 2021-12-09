@@ -1,0 +1,132 @@
+<h2 class="mt-4"> Selectores anidados </h2>
+<hr style="color: #37db8c">
+
+<div class="row">
+
+    <div class="col">
+
+        <form 
+            [formGroup]="miFormulario"
+            (ngSubmit)="guardar()">
+
+            <div class="row mb-3">
+
+                <label class="col-sm-3 col-form-label text-center"> Continente: </label>
+
+                <div class="col-sm-6">
+
+                    <!-- Selector Región -->
+
+                    <div class="mb-3">
+
+                        <select 
+
+                            formControlName="region"
+                            class="form-control" id="select-continente">
+
+                            <option value=""> --Selecione un continente-- </option>
+
+                            <option
+
+                                *ngFor="let region of regiones"
+                                [value]="region.region | lowercase"> 
+                                
+                                {{region.continente}}
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Selector Paises -->
+
+                    <div class="mb-3" *ngIf="paises.length > 0 && !cargando">
+
+                        <select 
+
+                            formControlName="pais"
+                            class="form-control" id="select-continente">
+
+                            <option value=""> --Selecione un país-- </option>
+
+                            <option
+
+                                *ngFor="let pais of paises"
+                                [value]="pais.alpha3Code"> 
+                                
+                                {{pais.translations.es}}
+                            </option>
+
+                        </select>
+    
+                    </div>
+
+                    <!-- Selector Paises Fronterizos -->
+
+                    <div class="mb-3" *ngIf="pais && !cargandoFrontera">
+
+                        <select 
+
+                            formControlName="frontera"
+                            class="form-control" id="select-continente">
+
+                            <option value=""> --Selecione un país fronterizo-- </option>
+
+                            <option
+
+                                *ngFor="let pais of fronteras"
+                                [value]="pais.alpha3Code"> 
+                                
+                                {{pais.translations.es}}
+                            </option>
+
+                            <option *ngIf="sinFrontera()" value="sin_frontera"> 
+                        
+                                Sin frontera
+                            </option>
+
+                        </select>
+        
+                    </div>
+
+                    <div  
+                        *ngIf="cargando || cargandoFrontera"
+                        class="alert alert-danger mb-3"
+                        id="loading">
+
+                        Cargando...
+
+                    </div>
+                    
+                    <div>
+
+                        <button 
+    
+                            type="submit"
+                            class="btn btn-success shadow float-end">
+    
+                            Seleccionar
+                        </button>
+    
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div style="margin-top: 8%;">
+
+    <h5> Formulario Válido </h5>
+    <pre>{{ miFormulario.valid}}</pre>
+
+
+    <h5> Valor del Formulario </h5>
+    <pre>{{ miFormulario.value | json}}</pre>
+
+</div>

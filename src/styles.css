@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+
+    color: white; 
+}
+
+.app-background {
+
+    background-color: #303030 !important;
+}
+
+#select-continente {
+
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+}
+
+.shadow {
+
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+
+}
+
+#loading{
+
+    background-color: #69efae;
+    border-color: #69efae;
+    color: #024a29;
+    height: 40px;
+    line-height: 5px
+}
