@@ -1,27 +1,31 @@
-# Selectores
+# Selectores App.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+Esta aplicación permite apreciar la utilización de selectores anidados en formularios reactivos de Angular.
 
-## Development server
+Mediante dichos selectores, se pueden observar las fronteras de los países que integran nuestro planeta.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+El primer selector permite elegir el continente dónde se encuentra situado el país. El segundo selector permite elegir el país cuyas fronteras se desean conocer. El tercer selector muestra todos los países limítrofes. En caso de que no se disponga de ningún país limítrofe, se puede seleccionar la opción sin frontera.
 
-## Code scaffolding
+La navegación entre selectores ofrece mensajes de carga para informar al usuario que se están generando las posibles opciones del selector.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Notas:
 
-## Build
+Este proyecto fue generado con [Angular CLI] versión 13.0.2.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Recuerden reconstruir los módulos de Node:
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Y luego, para probar la app en desarrollo, ejecuten el siguiente comando:
 
-## Running end-to-end tests
+```
+ng serve -o
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para construir el build, recuerden:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+ng build --configuration=production
+```
