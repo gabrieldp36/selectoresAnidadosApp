@@ -8,6 +8,8 @@ El primer selector permite elegir el continente dónde se encuentra situado el p
 
 La navegación entre selectores ofrece mensajes de carga para informar al usuario que se están generando las posibles opciones del selector.
 
+Pueden visitar la App haciendo click en este link: https://elegant-benz-b618eb.netlify.app/
+
 ### Notas:
 
 Este proyecto fue generado con [Angular CLI] versión 13.0.2.
